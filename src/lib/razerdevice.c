@@ -359,7 +359,7 @@ IOUSBDeviceInterface **getRazerUSBDeviceInterface(int type)
 			    continue;
 		}
 
-		kReturn = (*dev)->USBDeviceOpen(dev);
+		kReturn = (*dev)->USBDeviceOpenSeize(dev);
 		if (kReturn != kIOReturnSuccess)
 		{
 			printf("Unable to open USB device: %08x\n", kReturn);
@@ -454,7 +454,7 @@ RazerDevices getAllRazerDevices()
             continue;
         }
 
-        kReturn = (*dev)->USBDeviceOpen(dev);
+        kReturn = (*dev)->USBDeviceOpenSeize(dev);
         if (kReturn != kIOReturnSuccess)
         {
             printf("Unable to open USB device: %08x\n", kReturn);
